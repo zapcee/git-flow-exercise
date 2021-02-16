@@ -14,9 +14,20 @@ Welcome to _Flavor_, the only place on the planet where your taste buds won't be
 
 [Vanilla Panna Cotta](recipe/jan/vanilla-panna-cotta.md)
 
-### [John Lemon](writer/john-lemon.md)
+### [Madame Croque](writer/madame-croque.md)
 
-[Homemade Sausages](recipe/jan/homemade-sausages.md)
+[Chocolate Soup](recipe/jan/chocolate-soup.md)
+
+
+# Last Month's Favorites
+
+### [Cuba Pudding Jr.](writer/cuba-pudding-jr.md)
+
+[Grilled Peach Salad](recipe/jan/grilled-peach-salad.md)
+
+### [Eggs Benny](writer/eggs-benny.md)
+
+[Vanilla Panna Cotta](recipe/jan/vanilla-panna-cotta.md)
 
 ### [Madame Croque](writer/madame-croque.md)
 
