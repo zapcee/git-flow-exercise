@@ -27,18 +27,7 @@ Create a feature branch off of the `develop` branch that contains the writer's n
 ```sh
 $ git checkout develop
 
-$ git branch cuba-pudding-jr-feb
-
-$ git branch
-  cuba-pudding-jr-feb
-  develop
-* master
-```
-
-Next, switch to the newly created feature branch:
-```sh
-$ git checkout cuba-pudding-jr-feb
-Switched to branch 'cuba-pudding-jr-feb'
+$ git checkout -b cuba-pudding-jr-feb
 
 $ git branch
 * cuba-pudding-jr-feb
@@ -46,10 +35,11 @@ $ git branch
   master
 ```
 
-:bulb: You can simplify the last two steps to create and switch to a branch with a single command:
+:bulb: Feature branches will be named such that someone else can look at what branches are in progress and get a rough idea of what work is being done on each branch.
+
+:bulb: You can create a branch without immediately checking out the branch via the `git branch` command:
 ```sh
-$ git checkout -b cuba-pudding-jr-feb
-Switched to a new branch 'cuba-pudding-jr-feb'
+$ git branch cuba-pudding-jr-feb
 ```
 
 ---
@@ -62,11 +52,12 @@ Switched to a new branch 'cuba-pudding-jr-feb'
 
 ### 2 - Make Changes to the Project
 
-__All Team Members___
+__All Team Members__
 
 In your text editor, make the following changes:
+
 1. Add the new recipe under the [`/app/recipe/feb/`](/app/recipe/feb/) directory.
-2. Update the writer's page in the [`/app/writer/`](/app/writer/) direcotry.
+2. Update the writer's page in the [`/app/writer/`](/app/writer/) directory.
 3. Update the main mage [`/app/index.md`](/app/index.md).
 
 Since other people are going to be making changes at the same time, be careful not to make changes to lines of code that are not relevant to your change.
@@ -79,9 +70,9 @@ Since other people are going to be making changes at the same time, be careful n
 
 ---
 
-### 3 - Diff Changes
+### 3 - Review Changes
 
-__All Team Members___
+__All Team Members__
 
 If you view the current git status, you will see 2 files with unstaged changes and a new folder that has not been tracked by git:
 ```sh
@@ -114,7 +105,7 @@ index ac3abad..9777cd5 100644
  ### [Cuba Pudding Jr.](writer/cuba-pudding-jr.md) | cubapud@flavor.magazine
 
 -[Grilled Peach Salad](recipe/jan/grilled-peach-salad.md)
-+[Quick Oatmeal Pancakes](		recipe/feb/quick-oatmeal-pancakes.md)
++[Quick Oatmeal Pancakes](recipe/feb/quick-oatmeal-pancakes.md)
 
  ### [Eggs Benny](writer/eggs-benny.md) | englishmuffin@flavor.magazine
 
@@ -147,9 +138,8 @@ If you see that you have changes to unexpected lines, please correct them at thi
 
 Stage all of the changes that you've made thus far:
 ```sh
-$ git add -A
-# Careful, -A stages changes to all tracked files, untracks files that have been
-# removed, and tracks files that have been added.
+$ git add app/*
+# Careful, using a wildcard adds any file that has changed that matches the pattern.
 
 $ git status
 On branch cuba-pudding-jr-feb
@@ -182,10 +172,13 @@ $ git commit -m "Adding Cuba Pudding Jr.'s Feb Recipe"
 
 Now that your changes have been committed, let's get them published to your Fork on GitHub:
 ```sh
-$ git push origin cuba-pudding-jr-feb
+$ git push -u me HEAD
 ```
 
-:bulb: Make sure you type the correct branch name.
+:bulb: Specifying the HEAD reference instructs git to push to the same branch as the HEAD of your local project, which is currently your feature branch.
+
+:bulb: The `-u` flag instructs git to link your local branch with the remote's branch so that future push & pull commands do not require you
+to specify where you would like to push or pull code from.
 
 Navigate to your Fork on Github, you should now see your new branch in the interface.
 
